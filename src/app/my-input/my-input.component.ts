@@ -12,6 +12,7 @@ export class MyInputComponent implements OnInit {
   currEmail = '';
   currPhone = '';
   currAddress = '';
+  currlastName = '';
 
    contact: Contact = {
     name: '',
@@ -20,7 +21,7 @@ export class MyInputComponent implements OnInit {
     address: ''
   };
    @Output() someAdd = new EventEmitter();
-
+   @Output() secondEmmiter = new EventEmitter();
 
 
   addContact() {
@@ -47,7 +48,10 @@ export class MyInputComponent implements OnInit {
   }
 
 
-
+  sendString(name: string, lastname: string) {
+// console.log(name + ' ' + lastname);
+    this.secondEmmiter.emit({name : name, lastname : lastname});
+}
 
   ngOnInit() {
   }

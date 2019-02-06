@@ -46,6 +46,13 @@ this.currIndex = indx;
 
   }
 
+  secondFoo(obj) {
+    // console.log("hhhj");
+    console.log('THis from Futher: ' + obj);
+    console.log('THis from Futher: ' + obj.name);
+
+  }
+
 
 }
 

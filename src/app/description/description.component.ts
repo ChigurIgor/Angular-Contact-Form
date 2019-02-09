@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ContactModel} from '../contact.model';
+import {ContactListService} from '../contact-list.service';
 
 @Component({
   selector: 'app-description',
@@ -7,7 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DescriptionComponent implements OnInit {
 
-  constructor() { }
+  currContact: ContactModel = new ContactModel('', '', '', '');
+
+  constructor(private service: ContactListService) {
+    this.service.onClickCurrCont.subscribe(contact => this.currContact = contact );
+
+  }
+
+
 
   ngOnInit() {
   }

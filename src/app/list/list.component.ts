@@ -9,9 +9,17 @@ import {ContactListService} from '../contact-list.service';
 })
 export class ListComponent implements OnInit {
 
-  constructor(private service: ContactListService) {
-  }
   contacts: ContactModel[] = [];
+
+  constructor(private service: ContactListService) {
+
+    this.service.onClick.subscribe(contacts => this.contacts = contacts );
+    console.log('from List:' + this.contacts);
+  }
+
+  ngOnInit() {
+  }
+
 
   load() {
     this.contacts = [];
@@ -20,14 +28,13 @@ export class ListComponent implements OnInit {
     }
   }
 
+  remove(contact: ContactModel) {
+    this.service.remove( contact );
+    this.load();
+  }
 
-
-  ngOnInit() {
-    this.service.added.subscribe(
-      console.log('!')
-      // should put focus() on input
-    );
-
+  selectCurrent(contact: ContactModel, index: number) {
+    this.service.selectCurrent(contact, index);
   }
 
 }

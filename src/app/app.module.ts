@@ -6,6 +6,7 @@ import {FormsModule} from '@angular/forms';
 import { MyInputComponent } from './my-input/my-input.component';
 import { ListComponent } from './list/list.component';
 import { DescriptionComponent } from './description/description.component';
+import {ContactListService} from './contact-list.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { DescriptionComponent } from './description/description.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ContactListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

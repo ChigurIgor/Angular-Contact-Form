@@ -1,3 +1,8 @@
-<p>
-  description works!
-</p>
+
+<div class="col-6" *ngIf="currContact!=null">
+  <p >{{currContact.name}}</p>
+  <p >{{currContact.email}}</p>
+  <p >{{currContact.phone}}</p>
+  <p >{{currContact.address}}</p>
+
+</div>

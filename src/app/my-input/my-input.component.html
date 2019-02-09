@@ -1,9 +1,21 @@
-  <input type="text" class="form-control" placeholder="Name" [(ngModel)]="currName" >
+  <!--<input type="text" class="form-control" placeholder="Name" [(ngModel)]="currName" >-->
+  <!--<input type="text" class="form-control" placeholder="Email" [(ngModel)]="currEmail">-->
+  <!--<input type="text" class="form-control" placeholder="Phone" [(ngModel)]="currPhone">-->
+  <!--<input type="text" class="form-control" placeholder="Address" [(ngModel)]="currAddress">-->
+  <!--<button class="btn btn-primary" (click)="addContact()">Add</button>-->
+
+  <!--<input type="text" class="form-control" placeholder="Name"  #nameInput >-->
+  <!--<input type="text" class="form-control" placeholder="LastName" #lastNameInput >-->
   <input type="text" class="form-control" placeholder="Name"  #nameInput >
-  <input type="text" class="form-control" placeholder="LastName" #lastNameInput >
-  <input type="text" class="form-control" placeholder="Email" [(ngModel)]="currEmail">
-  <input type="text" class="form-control" placeholder="Phone" [(ngModel)]="currPhone">
-  <input type="text" class="form-control" placeholder="Address" [(ngModel)]="currAddress">
-  <button class="btn btn-primary" (click)="addContact()">Add</button>
-  <button class="btn btn-primary" (click)="sendString(nameInput.value,lastNameInput.value)">Add2</button>
+  <input type="text" class="form-control" placeholder="Email"  #emailInput>
+  <input type="text" class="form-control" placeholder="Phone"  #phoneInput>
+  <input type="text" class="form-control" placeholder="Address"  #addressInput>
+  <button class="btn btn-primary"
+          (click)="addContact(nameInput.value, emailInput.value,phoneInput.value, addressInput.value);
+                 nameInput.value='';
+                  emailInput.value='';
+                   phoneInput.value='';
+                   addressInput.value=''
+      ">Add</button>
+  <!--<button class="btn btn-primary" (click)="sendString(nameInput.value,lastNameInput.value)">Add2</button>-->
 

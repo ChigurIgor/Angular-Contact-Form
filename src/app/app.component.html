@@ -4,23 +4,10 @@
       <app-my-input (someAdd)='addContact($event)' (secondEmmiter)="secondFoo($event)"></app-my-input>
 
     </div>
-
-    <div class="col-6" *ngIf="currContact!=null">
-      <p >{{currContact.name}}</p>
-      <p >{{currContact.email}}</p>
-      <p >{{currContact.phone}}</p>
-      <p >{{currContact.address}}</p>
-
-    </div>
+  <app-description></app-description>
   </div>
   <div class="row" style="border-top-width:1px; border-top-style: solid; padding-top: 2rem;">
-    <div class="col">
-          <ul class="list-group">
-            <li class="list-group-item"  *ngFor="let contact of contacts; let i=index"   (click)="selectCurrent(contact, i)">{{contact.name}}
-              <button class="btn btn-danger" (click)="remove(i)">Delete</button></li>
-
-          </ul>
-    </div>
+   <app-list></app-list>
   </div>
 
 </div>
